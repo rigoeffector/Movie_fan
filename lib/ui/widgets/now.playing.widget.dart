@@ -1,3 +1,4 @@
+import 'package:film_fan/bloc/controllers/genres_bloc.dart';
 import 'package:film_fan/bloc/controllers/movies_bloc.dart';
 import 'package:film_fan/ui/widgets/movie.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class _NowPlayingWidgetState extends State<NowPlayingWidget> {
   @override
   Widget build(BuildContext context) {
     bloc.fetchAllMovies();
+    bloc_genres.fetchAllGenreMovies();
     return StreamBuilder(
       stream: bloc.allMovies,
       builder: (context, AsyncSnapshot<MovieModel> snapshot) => snapshot.hasData

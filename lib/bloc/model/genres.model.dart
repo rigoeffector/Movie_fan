@@ -1,112 +1,36 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
-class Genres {
-  final String id;
-  final String name;
-  final String image;
-  final Color color;
-  Genres({
-    required this.color,
-    required this.image,
-    required this.id,
-    required this.name,
-  });
-  factory Genres.fromJson(json) {
-    return Genres(
-      id: json['id'].toString(),
-      name: json['name'],
-      image: json['image'].toString(),
-      color: json['color'],
-    );
+class GenreModel {
+  List<Result> results = [];
+  GenreModel.fromJson(Map<String, dynamic> parseJson) {
+    List<Result> temp = [];
+    for (var i = 0; i < parseJson['genres'].length; i++) {
+      Result result = Result(parseJson['genres'][i]);
+      temp.add(result);
+    }
+    temp = temp.toSet().toList();
+    results = temp;
+  }
+  List<Result> get getGenres => results;
+  String getGenre(List<int> ids) {
+    ids = ids.toSet().toList();
+    String mygenre = "";
+    for (var i = 0; i < ids.length; i++) {
+      mygenre += results.where((user) => user.id == ids[i]).first.name + ", ";
+    }
+    mygenre = mygenre.substring(0, mygenre.length - 2);
+    return mygenre;
   }
 }
 
-class GenresList {
-  final List<Genres> list;
-  GenresList({
-    required this.list,
-  });
-  factory GenresList.fromJson(json) {
-    return GenresList(
-        list: (json as List).map((genre) => Genres.fromJson(genre)).toList());
-  }
-}
+class Result {
+  late dynamic id;
+  late dynamic name;
 
-final genreslist = [
-  {
-    "id": 28,
-    "name": "Action",
-  },
-  {
-    "id": 12,
-    "name": "Adventure",
-  },
-  {
-    "id": 16,
-    "name": "Animation",
-  },
-  {
-    "id": 35,
-    "name": "Comedy",
-  },
-  {
-    "id": 80,
-    "name": "Crime",
-  },
-  {
-    "id": 99,
-    "name": "Documentary",
-  },
-  {
-    "id": 18,
-    "name": "Drama",
-  },
-  {
-    "id": 10751,
-    "name": "Family",
-  },
-  {
-    "id": 14,
-    "name": "Fantasy",
-  },
-  {
-    "id": 36,
-    "name": "History",
-  },
-  {
-    "id": 27,
-    "name": "Horror",
-  },
-  {
-    "id": 10402,
-    "name": "Music",
-  },
-  {
-    "id": 9648,
-    "name": "Mystery",
-  },
-  {
-    "id": 10749,
-    "name": "Romance",
-  },
-  {
-    "id": 878,
-    "name": "Science Fiction",
-  },
-  {
-    "id": 10770,
-    "name": "TV Movie",
-  },
-  {
-    "id": 53,
-    "name": "Thriller",
-  },
-  {
-    "id": 10752,
-    "name": "War",
-  },
-  {
-    "id": 37,
-    "name": "Western",
-  },
-];
+  Result(result) {
+    id = result['id'].toString();
+    name = result['name'];
+  }
+  String get get_id => id;
+  String get get_name => name;
+}

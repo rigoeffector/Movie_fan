@@ -1,7 +1,6 @@
-import 'package:film_fan/bloc/controllers/movies.recommendations_bloc.dart';
+import 'package:film_fan/bloc/controllers/genres_bloc.dart';
 import 'package:film_fan/bloc/model/movies.model.dart';
 import 'package:film_fan/services/movie.api.provider.dart';
-import 'package:film_fan/ui/widgets/genre.widget.dart';
 import 'package:film_fan/ui/widgets/recommended.widget.dart';
 import 'package:film_fan/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +16,7 @@ class MovieContentWidget extends StatefulWidget {
 class _MovieContentWidgetState extends State<MovieContentWidget> {
   @override
   Widget build(BuildContext context) {
+    bloc_genres.fetchAllGenreMovies();
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,6 +41,21 @@ class _MovieContentWidgetState extends State<MovieContentWidget> {
                   width: MediaQuery.of(context).size.width,
                   height: 300,
                   color: const Color.fromARGB(69, 0, 0, 0),
+                ),
+              ),
+            ),
+            Align(
+              child: Positioned(
+                left: 200,
+                top: 150,
+                bottom: -20,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    width: 100,
+                    height: 300,
+                    color: Color.fromARGB(255, 255, 15, 15),
+                  ),
                 ),
               ),
             ),
@@ -86,7 +101,7 @@ class _MovieContentWidgetState extends State<MovieContentWidget> {
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width,
                         child: Text(
-                          widget.data.vote_average.toString(),
+                          widget.data.vote_average.toString() + '/ 10',
                           style: const TextStyle(
                             fontSize: 15,
                             color: kTxtColor,
@@ -94,17 +109,6 @@ class _MovieContentWidgetState extends State<MovieContentWidget> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        child: Row(
-                          children: [
-                            // GenreWidget(),
-                          ],
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),
@@ -133,7 +137,7 @@ class _MovieContentWidgetState extends State<MovieContentWidget> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: const Text(
-                "Recommended Movies",
+                "Similar Movies",
                 style: const TextStyle(
                     color: kTxtColor,
                     fontSize: 18,

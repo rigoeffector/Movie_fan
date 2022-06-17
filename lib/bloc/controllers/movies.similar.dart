@@ -5,19 +5,18 @@ import 'package:rxdart/rxdart.dart';
 class MoviesRecommendationBloc {
   late final String movieId;
   final respository = Repository();
-  final movieRecommendationFetcher = PublishSubject<MovieModel>();
-  Stream<MovieModel> get allRecommendationMovies =>
-      movieRecommendationFetcher.stream;
+  final movieSimilarFetcher = PublishSubject<MovieModel>();
+  Stream<MovieModel> get allRecommendationMovies => movieSimilarFetcher.stream;
 
   fetchAllRecommendationMovies(movieId) async {
     MovieModel movieRecModel =
         await respository.fetchRecommendationMovies(movieId);
-    movieRecommendationFetcher.sink.add(movieRecModel);
+    movieSimilarFetcher.sink.add(movieRecModel);
   }
 
   dispose() {
-    movieRecommendationFetcher.close();
+    movieSimilarFetcher.close();
   }
 }
 
-final blocRecommendation = MoviesRecommendationBloc();
+final bloc_similar = MoviesRecommendationBloc();
