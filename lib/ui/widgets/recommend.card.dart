@@ -3,15 +3,15 @@ import 'package:film_fan/ui/screens/movie.detail.screen.dart';
 import 'package:film_fan/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class MovieWidget extends StatefulWidget {
-  AsyncSnapshot<MovieModel> asyncSnapshot;
-  MovieWidget(this.asyncSnapshot, {Key? key}) : super(key: key);
+class RecommendCard extends StatefulWidget {
+  AsyncSnapshot asyncSnapshot;
+  RecommendCard(this.asyncSnapshot, {Key? key}) : super(key: key);
 
   @override
-  State<MovieWidget> createState() => _MovieWidgetState();
+  State<RecommendCard> createState() => _RecommendCardState();
 }
 
-class _MovieWidgetState extends State<MovieWidget> {
+class _RecommendCardState extends State<RecommendCard> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class MovieModel {
+class MoviesRecommedationModel {
   late int id;
   late int page;
 
@@ -8,7 +8,7 @@ class MovieModel {
   late int total_results;
 
   List<Result> results = [];
-  MovieModel.fromJson(Map<String, dynamic> parseJson) {
+  MoviesRecommedationModel.fromJson(Map<String, dynamic> parseJson) {
     page = parseJson['page'];
 
     total_page = parseJson['total_pages'];
