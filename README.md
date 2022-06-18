@@ -46,11 +46,12 @@ Film Fan is a new startup based in Kigali. Their vision is to become the single 
 ## Dependencies
 
   
-  * rxdart
-  * floating_action_bubble
-  * equatable
-  * flutter_bloc
-  * flutter_rating_bar
+  *  <a href="https://pub.dev/packages/rxdart">rxdart</a>.
+  *  <a href="https://pub.dev/packages/floating_action_bubble">floating_action_bubble</a>.
+  *  <a href="https://pub.dev/packages/equatable">equatable</a>. 
+  *  <a href="https://pub.dev/packages/flutter_bloc">flutter_bloc</a>. 
+  *  <a href="https://pub.dev/packages/flutter_rating_bar">flutter_bloc</a>. 
+  
  
 
 
