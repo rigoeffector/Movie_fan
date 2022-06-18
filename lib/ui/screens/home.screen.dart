@@ -1,10 +1,11 @@
+import 'package:film_fan/services/movie.api.provider.dart';
 import 'package:film_fan/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/body.widget.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();

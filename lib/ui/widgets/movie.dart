@@ -1,11 +1,19 @@
 import 'package:film_fan/bloc/model/movies.model.dart';
+import 'package:film_fan/cubit/rating/rating_cubit.dart';
+import 'package:film_fan/services/movie.api.provider.dart';
 import 'package:film_fan/ui/screens/movie.detail.screen.dart';
 import 'package:film_fan/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MovieWidget extends StatefulWidget {
   AsyncSnapshot<MovieModel> asyncSnapshot;
-  MovieWidget(this.asyncSnapshot, {Key? key}) : super(key: key);
+  MovieApiProvider movieApiProvider;
+  MovieWidget(
+    this.asyncSnapshot,
+    this.movieApiProvider, {
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<MovieWidget> createState() => _MovieWidgetState();
@@ -23,8 +31,12 @@ class _MovieWidgetState extends State<MovieWidget> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => MovieDetailScreen(
-                          widget.asyncSnapshot.data!.results[index])));
+                      builder: (_) => BlocProvider(
+                            create: (BuildContext context) =>
+                                RatingCubit(widget.movieApiProvider),
+                            child: MovieDetailScreen(
+                                widget.asyncSnapshot.data!.results[index]),
+                          )));
             },
             child: (Stack(
               children: <Widget>[

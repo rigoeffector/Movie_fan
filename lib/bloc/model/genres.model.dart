@@ -1,36 +1,30 @@
-import 'package:flutter/cupertino.dart';
-
 class GenreModel {
-  List<Result> results = [];
-  GenreModel.fromJson(Map<String, dynamic> parseJson) {
-    List<Result> temp = [];
-    for (var i = 0; i < parseJson['genres'].length; i++) {
-      Result result = Result(parseJson['genres'][i]);
-      temp.add(result);
-    }
-    temp = temp.toSet().toList();
-    results = temp;
-  }
-  List<Result> get getGenres => results;
-  String getGenre(List<int> ids) {
-    ids = ids.toSet().toList();
-    String mygenre = "";
-    for (var i = 0; i < ids.length; i++) {
-      mygenre += results.where((user) => user.id == ids[i]).first.name + ", ";
-    }
-    mygenre = mygenre.substring(0, mygenre.length - 2);
-    return mygenre;
-  }
+  final int id;
+  final String name;
+
+  GenreModel({
+    required this.id,
+    required this.name,
+  });
 }
 
-class Result {
-  late dynamic id;
-  late dynamic name;
-
-  Result(result) {
-    id = result['id'].toString();
-    name = result['name'];
-  }
-  String get get_id => id;
-  String get get_name => name;
-}
+List<GenreModel> genres = [
+  GenreModel(id: 28, name: 'Action'),
+  GenreModel(id: 12, name: 'Adventure'),
+  GenreModel(id: 16, name: 'Animation'),
+  GenreModel(id: 35, name: 'Comedy'),
+  GenreModel(id: 80, name: 'Crime'),
+  GenreModel(id: 99, name: 'Documentary'),
+  GenreModel(id: 18, name: 'Drama'),
+  GenreModel(id: 10751, name: 'Family'),
+  GenreModel(id: 14, name: 'Fantasy'),
+  GenreModel(id: 27, name: 'Horror'),
+  GenreModel(id: 10402, name: 'Music'),
+  GenreModel(id: 9648, name: 'Mistery'),
+  GenreModel(id: 10749, name: 'Romance'),
+  GenreModel(id: 878, name: 'Science Fiction'),
+  GenreModel(id: 10770, name: 'TV Movie'),
+  GenreModel(id: 53, name: 'Thriller'),
+  GenreModel(id: 10752, name: 'War'),
+  GenreModel(id: 37, name: 'Western'),
+];

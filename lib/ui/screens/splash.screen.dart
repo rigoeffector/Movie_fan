@@ -1,4 +1,5 @@
 import 'package:film_fan/ui/screens/home.screen.dart';
+import 'package:film_fan/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
@@ -8,6 +9,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
+      backgroundColor: kPrimaryColor,
       splash: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -19,13 +21,12 @@ class SplashScreen extends StatelessWidget {
                 height: 150,
                 width: 150,
                 child: Image.asset(
-                  'assets/icons/logo.png',
+                  'assets/images/logo.png',
                 )),
           ],
         ),
       ),
-      nextScreen: const HomeScreen(),
-      // nextScreen: WelcomePage(),
+      nextScreen: HomeScreen(),
       splashIconSize: 250,
       duration: 4000,
       splashTransition: SplashTransition.slideTransition,

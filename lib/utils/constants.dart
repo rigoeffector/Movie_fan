@@ -6,3 +6,5 @@ const kTxtColor = Color.fromARGB(255, 255, 255, 255);
 const kSTxtColor = Color.fromARGB(255, 199, 199, 199);
 const apiKey = '5f0af541eb9a38c16fb343c00fdb7e36';
 const baseUrl = 'https://api.themoviedb.org/3/movie';
+const gnrUrl = 'https://api.themoviedb.org/3/genre/movie/';
+const session = 'fee5389c26a6581521a749f2e42c57e7';
