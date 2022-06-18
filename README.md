@@ -8,7 +8,7 @@
 - [Features](#features)
 - [Requirements](#requirements)
 - [How To Run](howtorun)
-- [Screenshots](#screenshots)
+- [Dependencies](#dependencies)
 - [Author](#author)
 
 ## Introduction
@@ -43,6 +43,16 @@ Film Fan is a new startup based in Kigali. Their vision is to become the single 
    ```
 
 
+## Dependencies
+
+  
+  * rxdart
+  * floating_action_bubble
+  * equatable
+  * flutter_bloc
+  * flutter_rating_bar
+ 
+
 
 
 ## Author
@@ -50,7 +60,7 @@ Film Fan is a new startup based in Kigali. Their vision is to become the single 
   <table>
     <tr>
       <td align="center">
-        <a href="https://github.com/ihsaninh">
+        <a href="https://github.com/rigoeffector">
           <sub><b>Rigobert  Rene</b></sub>
         </a>
       </td>
