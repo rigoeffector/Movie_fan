@@ -29,7 +29,7 @@ Film Fan is a new startup based in Kigali. Their vision is to become the single 
 
 1. Clone this repository
    ```
-   $ git clone https://github.com/ihsaninh/flutter-tmdbmovie-bloc-cubit.git
+   https://github.com/rigoeffector/Movie_fan/tree/master
    ```
 2. Install all dependencies 
    ```
@@ -51,7 +51,6 @@ Film Fan is a new startup based in Kigali. Their vision is to become the single 
     <tr>
       <td align="center">
         <a href="https://github.com/ihsaninh">
-         
           <sub><b>Rigobert  Rene</b></sub>
         </a>
       </td>
