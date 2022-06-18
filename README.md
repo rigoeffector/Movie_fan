@@ -1,6 +1,6 @@
-# film_fan
 
-<h1 align="center">:octocat: Movie DB App :octocat:</h1>
+
+<h1 align="center">:octocat: Movie Fan :octocat:</h1>
 
 ## Table of Contents
 
@@ -12,13 +12,13 @@
 - [Author](#author)
 
 ## Introduction
-Movie DB is an application to show all movies in the world. The data is provide by API from <a href="https://www.themoviedb.org/documentation/api">TMDB Movie</a>.
+Film Fan is a new startup based in Kigali. Their vision is to become the single place for discovering and booking movies in Rwanda. Their strategy is to first introduce a mobile app that allows their customers to discover movies they may be interested in. Once they build a customer base, they will introduce the functionality to book movies in the cinema. The data is provide by API from <a href="https://www.themoviedb.org/documentation/api">TMDB Movie</a>.
 
 
 ## Features
-* User can see all Movie like upcoming movie, top rated movie, popular movie, and more
-* User can see detail movie like decsription, movie casts, rating, and more.
-* Search movie based movie name.
+* User can see all Movie like now palying movie, and similar movie
+* User can see detail movie like decsription, movie genre, rating, and poster.
+* a user can rate a movie and add can even add it to his or her favorite
 * And more
 
 ## Requirements
@@ -31,27 +31,18 @@ Movie DB is an application to show all movies in the world. The data is provide 
    ```
    $ git clone https://github.com/ihsaninh/flutter-tmdbmovie-bloc-cubit.git
    ```
-2. Install all dependencies on the package.json
+2. Install all dependencies 
    ```
-   $ cd flutter-tmdbmovie-bloc-cubit
+   $ cd /path to your desired location where you cloned this repo
    $ pub get
    ```
-3. Run Movie DB App
+3. Run Movie Fan App
 
    ```
    $ flutter run
    ```
 
-## Screenshot
-<div>
-    <img width="250" src="https://github.com/ihsaninh/flutter-tmdbmovie-bloc-cubit/blob/master/screenshoots/ss1.jpg">
-    <img width="250" src="https://github.com/ihsaninh/flutter-tmdbmovie-bloc-cubit/blob/master/screenshoots/ss2.jpg">  
-    <img width="250" src="https://github.com/ihsaninh/flutter-tmdbmovie-bloc-cubit/blob/master/screenshoots/ss3.jpg">
-    <img width="250" src="https://github.com/ihsaninh/flutter-tmdbmovie-bloc-cubit/blob/master/screenshoots/ss4.jpg">
-    <img width="250" src="https://github.com/ihsaninh/flutter-tmdbmovie-bloc-cubit/blob/master/screenshoots/ss5.jpg">
-    <img width="250" src="https://github.com/ihsaninh/flutter-tmdbmovie-bloc-cubit/blob/master/screenshoots/ss6.jpg">
-    <img width="250" src="https://github.com/ihsaninh/flutter-tmdbmovie-bloc-cubit/blob/master/screenshoots/ss7.jpg">
-</div>
+
 
 
 ## Author
@@ -60,8 +51,8 @@ Movie DB is an application to show all movies in the world. The data is provide 
     <tr>
       <td align="center">
         <a href="https://github.com/ihsaninh">
-          <img width="100" src="https://avatars0.githubusercontent.com/u/24758414?s=460&v=4" alt="Ihsan Nurul Habib"><br/>
-          <sub><b>Ihsan Nurul Habib</b></sub>
+         
+          <sub><b>Rigobert  Rene</b></sub>
         </a>
       </td>
     </tr>
